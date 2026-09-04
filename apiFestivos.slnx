@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="apiFestivos.dominio/apiFestivos.dominio.csproj" />
+  <Project Path="apiFestivos.infraestructura/apiFestivos.infraestructura.csproj" />
+</Solution>
