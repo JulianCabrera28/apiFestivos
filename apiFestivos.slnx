@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="apiFestivos.core/apiFestivos.core.csproj" Id="ea7745c7-03d9-498c-925a-7ebc80bf7901" />
   <Project Path="apiFestivos.dominio/apiFestivos.dominio.csproj" />
   <Project Path="apiFestivos.infraestructura/apiFestivos.infraestructura.csproj" />
 </Solution>

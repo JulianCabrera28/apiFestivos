@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\apiFestivos.core\apiFestivos.core.csproj" />
     <ProjectReference Include="..\apiFestivos.dominio\apiFestivos.dominio.csproj" />
   </ItemGroup>
 
