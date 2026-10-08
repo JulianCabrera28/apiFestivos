@@ -52,10 +52,10 @@ namespace apiFestivos.infraestructura.Repositorios
 
         public async Task<Festivo> Obtener(int Id)
         {
-            return await contexto.Festivos
+            return (await contexto.Festivos
                 .Include(festivo => festivo.Tipo)
                 .Include(festivo => festivo.Pais)
-                .FirstOrDefaultAsync(festivo => festivo.Id == Id);
+                .FirstOrDefaultAsync(festivo => festivo.Id == Id))!;
         }
 
         public async Task<IEnumerable<Festivo>> ObtenerPorPais(int IdPais)

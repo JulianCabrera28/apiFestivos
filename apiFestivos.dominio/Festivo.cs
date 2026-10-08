@@ -27,7 +27,6 @@ namespace apiFestivos.dominio
         [Column("IdPais")]
         public int IdPais { get; set; }
 
-        // relaciones
         public Tipo? Tipo { get; set; }
         public Pais? Pais { get; set; }
     }

@@ -21,7 +21,6 @@ namespace apiFestivos.core.servicios
 
         Task<bool> Eliminar(int Id);
 
-        // Logica de negocio especifica
         Task<bool> EsFestivo(int IdPais, int Anio, int Mes, int Dia);
 
         Task<IEnumerable<Festivo>> ObtenerFestivosPorAnio(int IdPais, int Anio);

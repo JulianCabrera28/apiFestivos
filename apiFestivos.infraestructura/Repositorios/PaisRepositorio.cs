@@ -50,7 +50,7 @@ namespace apiFestivos.infraestructura.Repositorios
 
         public async Task<Pais> Obtener(int Id)
         {
-            return await contexto.Paises.FindAsync(Id);
+            return (await contexto.Paises.FindAsync(Id))!;
         }
 
         public async Task<IEnumerable<Pais>> ObtenerTodos()

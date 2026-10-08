@@ -6,44 +6,42 @@ namespace apiFestivos.infraestructura.Persistencia
 {
     public class FestivosContext : DbContext
     {
+        public FestivosContext(DbContextOptions<FestivosContext> opciones) : base(opciones)
+        {
+        }
+
         public DbSet<Tipo> Tipos { get; set; }
         public DbSet<Pais> Paises { get; set; }
         public DbSet<Festivo> Festivos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder constructor)
         {
-            // Tabla TIPO
-
             constructor.Entity<Tipo>(entidadTipo =>
             {
-                entidadTipo.HasKey(e => e.Id); // Clave primaria
-                entidadTipo.HasIndex(e => e.Descripcion).IsUnique(); // Indice
+                entidadTipo.HasKey(e => e.Id);
+                entidadTipo.HasIndex(e => e.Descripcion).IsUnique();
             });
-
-            // Tabla PAIS
 
             constructor.Entity<Pais>(entidadPais =>
             {
-                entidadPais.HasKey(e => e.Id); // Clave primaria
-                entidadPais.HasIndex(e => e.Nombre).IsUnique(); // Indice
+                entidadPais.HasKey(e => e.Id);
+                entidadPais.HasIndex(e => e.Nombre).IsUnique();
             });
-
-            // Tabla FESTIVO
 
             constructor.Entity<Festivo>(entidadFestivo =>
             {
-                entidadFestivo.HasKey(e => e.Id); // Clave primaria
+                entidadFestivo.HasKey(e => e.Id);
             });
 
             constructor.Entity<Festivo>()
                 .HasOne(e => e.Tipo)
                 .WithMany()
-                .HasForeignKey(e => e.IdTipo); // Clave foránea
+                .HasForeignKey(e => e.IdTipo);
 
             constructor.Entity<Festivo>()
                 .HasOne(e => e.Pais)
                 .WithMany()
-                .HasForeignKey(e => e.IdPais); // Clave foránea
+                .HasForeignKey(e => e.IdPais);
         }
     }
 }
